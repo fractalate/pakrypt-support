@@ -4,35 +4,26 @@ Tools and information to support deploying and operating an instance of Pakrypt.
 
 ## Deployment Checklist
 
+* Determine the next release version number (adhere to semver `v1.0.0`).
+* Merge all relevant branches into `main`.
+* Draft commits on `main` adding the following:
+  - `LICENSE`
+    - Updated copyright.
+  - `package.json`
+    - Updated copyright.
+    - Updated version number.
+  - `package-lock.json` (run `npm install .`)
+    - Updated version number.
+  - `doc/Release.md`
+    - Release summary.
+* Tag the `main` branch with the final release version `v1.0.0`.
+* Run the app deploy script with the version tag, e.g. `./deploy-app.sh v1.0.0`.
+* Verify the version by using the app.
+
 ### Tips
 
 * Give a couple days of time between completing the development work and the release.
 * Prepare the release summary a couple days before the release.
-
-### Release Candidate
-
-When there are some changes which will need to be released, start by creating a release candidate version.
-
-* Determine the next release version number (adhere to semver `v1.0.0`).
-* Create a release candidate branch from `main` (format `v1.0.0-rc1`).
-* Merge all relevant branches into the release candidate branch.
-* Draft commits to add the following:
-  - The release candidate version number in `package.json`.
-  - The release candidate version number in `package-lock.json` (run `npm install .`).
-  - A release summary tagged with the final release version in `doc/Release.md`.
-
-The release candidate may then be distributed for testing.
-
-### Release
-
-After testing, the release can be created.
-
-* Draft commits on the release candidate branch to add the following:
-  - The final release version number in `package.json`.
-  - The final release version number in `package-lock.json` (run `npm install .`).
-* Merge the release candidate branch into `main`, creating a merge commit (`git merge --no-ff v1.0.0-rc1`).
-* Tag the `main` branch with the final release version `v1.0.0`.
-* Run the APP deploy script with the version tag, e.g. `./deploy-app.sh v1.0.0`.
 
 ## Deploy Scripts
 
