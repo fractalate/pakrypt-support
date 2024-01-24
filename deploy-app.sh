@@ -9,18 +9,20 @@ else
     exit 1
 fi
 
-CODE_DIR=checkout
+CODE_DIR=checkout-app
 
 if [ -d "${CODE_DIR}" ]; then
     pushd "${CODE_DIR}"
     git clean -xdf .
+    git fetch
+    git checkout "${TAG}"
     git pull
 else
     git clone https://github.com/fractalate/pakrypt.git "${CODE_DIR}"
     pushd "${CODE_DIR}"
+    git checkout "${TAG}"
 fi
 
-git checkout "${TAG}"
 npm install .
 npm run build
 
