@@ -24,8 +24,14 @@ else
     git checkout "${TAG}"
 fi
 
+TIMESTAMP=$( date )
+COMMIT=$( git rev-parse HEAD )
+
 npm install .
 npm run build
+
+echo "deploy time: ${TIMESTAMP}" > ./dist/deployment_metadata.txt
+echo "git commit hash: ${COMMIT}" >> ./dist/deployment_metadata.txt
 
 rsync -av --delete ./dist/ "${WEB_HOST}:/var/www/app.pakrypt.com/"
 

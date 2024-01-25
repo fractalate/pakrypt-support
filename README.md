@@ -45,10 +45,10 @@ To deploy web front for Pakrypt to [www.pakrypt.com](https://www.pakrypt.com/), 
 * [ ] ~~Have a file name when exporting on mobile Firefox~~.
 * [ ] Automatic extensions when uploading files.
 * [ ] Validate JSON structures while loading.
-* [ ] Wrap up README.md.
+* [x] Wrap up README.md.
 * [ ] Release details.
-* [ ] Detailed user guide.
+* [x] Detailed user guide.
 * [ ] Version 1.0.0.
-* [ ] Include deployed tag and commit in the build? The version string can lie.
-* [ ] Space between password revealer.
-* [ ] Download button on file tile.
+* [x] Include deployed tag and commit in the build? The version string can lie.
+* [x] Space between password revealer.
+* [x] Download button on file tile.
