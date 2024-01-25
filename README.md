@@ -4,6 +4,16 @@ Tools and information to support deploying and operating an instance of Pakrypt.
 
 ## Deployment Checklist
 
+Pre-flight:
+
+* Is the help tile updated?
+* Is the README updated?
+* Is the developer documentation updated?
+* Is the guide updated?
+* Is the web front updated?
+
+Release:
+
 * Determine the next release version number (adhere to semver `v1.0.0`).
 * Merge all relevant branches into `main`.
 * Draft commits on `main` adding the following:
@@ -50,5 +60,6 @@ To deploy web front for Pakrypt to [www.pakrypt.com](https://www.pakrypt.com/), 
 * [x] Include deployed tag and commit in the build? The version string can lie.
 * [x] Space between password revealer.
 * [x] Download button on file tile.
-* [ ] Release details.
-* [ ] Version 1.0.0.
+* [ ] Draft a QA checklist for manual testing.
+* [ ] QA v0.9.1 release.
+* [ ] Final v1.0.0 release.
