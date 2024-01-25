@@ -43,12 +43,12 @@ To deploy web front for Pakrypt to [www.pakrypt.com](https://www.pakrypt.com/), 
 
 * [x] Better support for wide displays.
 * [ ] ~~Have a file name when exporting on mobile Firefox~~.
-* [ ] Automatic extensions when uploading files.
-* [ ] Validate JSON structures while loading.
+* [x] Automatic extensions when uploading files.
+* [x] Validate JSON structures while loading. Partially done. I've refactored to give myself space to do this incrementally.
 * [x] Wrap up README.md.
-* [ ] Release details.
 * [x] Detailed user guide.
-* [ ] Version 1.0.0.
 * [x] Include deployed tag and commit in the build? The version string can lie.
 * [x] Space between password revealer.
 * [x] Download button on file tile.
+* [ ] Release details.
+* [ ] Version 1.0.0.
