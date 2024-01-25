@@ -9,6 +9,7 @@ else
     exit 1
 fi
 
+WEB_HOST=tulip
 CODE_DIR=checkout-www
 
 if [ -d "${CODE_DIR}" ]; then
@@ -23,6 +24,6 @@ else
     git checkout "${TAG}"
 fi
 
-rsync -av --delete --exclude=.git/ ./ tulip:/var/www/www.pakrypt.com/
+rsync -av --delete --exclude=.git/ ./ "${WEB_HOST}:/var/www/www.pakrypt.com/"
 
 popd

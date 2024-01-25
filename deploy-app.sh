@@ -9,6 +9,7 @@ else
     exit 1
 fi
 
+WEB_HOST=tulip
 CODE_DIR=checkout-app
 
 if [ -d "${CODE_DIR}" ]; then
@@ -26,6 +27,6 @@ fi
 npm install .
 npm run build
 
-rsync -av --delete ./dist/ tulip:/var/www/app.pakrypt.com/
+rsync -av --delete ./dist/ "${WEB_HOST}:/var/www/app.pakrypt.com/"
 
 popd
