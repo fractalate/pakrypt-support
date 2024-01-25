@@ -38,3 +38,17 @@ To deploy web front for Pakrypt to [www.pakrypt.com](https://www.pakrypt.com/), 
 ```bash
 ./deploy-www.sh git-tag-to-deploy
 ```
+
+## Release Rundown 
+
+* [x] Better support for wide displays.
+* [ ] ~~Have a file name when exporting on mobile Firefox~~.
+* [ ] Automatic extensions when uploading files.
+* [ ] Validate JSON structures while loading.
+* [ ] Wrap up README.md.
+* [ ] Release details.
+* [ ] Detailed user guide.
+* [ ] Version 1.0.0.
+* [ ] Include deployed tag and commit in the build? The version string can lie.
+* [ ] Space between password revealer.
+* [ ] Download button on file tile.
