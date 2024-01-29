@@ -15,9 +15,9 @@ CODE_DIR=checkout-app
 if [ -d "${CODE_DIR}" ]; then
     pushd "${CODE_DIR}"
     git clean -xdf .
-    git fetch
-    git checkout "${TAG}"
+    git checkout main
     git pull
+    git checkout "${TAG}"
 else
     git clone https://github.com/fractalate/pakrypt.git "${CODE_DIR}"
     pushd "${CODE_DIR}"

@@ -24,6 +24,7 @@ Pre-flight:
 * Is the developer documentation updated?
 * Is the guide updated?
 * Is the web front updated?
+* Is QA good?
 
 Release:
 
@@ -40,6 +41,9 @@ Release:
   - `doc/Release.md`
     - Release summary.
 * Tag the `main` branch with the final release version `v1.0.0`.
+* Manage GitHub release.
+  - Do a fresh build, tar it up.
+  - Put the file in the release.
 * Run the app deploy script with the version tag, e.g. `./deploy-app.sh v1.0.0`.
 * Verify the version by using the app.
 
