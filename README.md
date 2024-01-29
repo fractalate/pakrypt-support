@@ -2,6 +2,19 @@
 
 Tools and information to support deploying and operating an instance of Pakrypt.
 
+## QA Process
+
+Read the supporting material:
+
+* [www.pakrypt.com](https://www.pakrypt.com/)
+* [www.pakrypt.com/guide.html](https://www.pakrypt.com/guide.html)
+* [README.md](https://github.com/fractalate/pakrypt)
+* [Developers.md](https://github.com/fractalate/pakrypt/blob/main/doc/Developers.md)
+* [Release.md](https://github.com/fractalate/pakrypt/blob/main/doc/Release.md)
+* Help tile.
+
+Test everything mentioned by the material.
+
 ## Deployment Checklist
 
 Pre-flight:
@@ -60,6 +73,10 @@ To deploy web front for Pakrypt to [www.pakrypt.com](https://www.pakrypt.com/), 
 * [x] Include deployed tag and commit in the build? The version string can lie.
 * [x] Space between password revealer.
 * [x] Download button on file tile.
-* [ ] Draft a QA checklist for manual testing.
+* [x] Draft a QA checklist for manual testing.
 * [ ] QA v0.9.1 release.
 * [ ] Final v1.0.0 release.
+
+## Bug Rundown
+
+* [ ] Exporting my online pak on mobile isn't importable. "Can't load file."
