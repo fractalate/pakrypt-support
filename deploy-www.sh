@@ -18,6 +18,7 @@ if [ -d "${CODE_DIR}" ]; then
     git checkout main
     git pull
     git checkout "${TAG}"
+    git pull || true # TODO: Not great, but okay for now.
 else
     git clone https://github.com/fractalate/www.pakrypt.com.git "${CODE_DIR}"
     pushd "${CODE_DIR}"

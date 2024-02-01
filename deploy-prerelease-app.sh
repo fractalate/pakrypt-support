@@ -10,7 +10,7 @@ else
 fi
 
 WEB_HOST=tulip
-CODE_DIR=checkout-app
+CODE_DIR=checkout-prerelease-app
 
 if [ -d "${CODE_DIR}" ]; then
     pushd "${CODE_DIR}"
@@ -34,6 +34,8 @@ npm run build
 echo "deploy time: ${TIMESTAMP}" > ./dist/deployment_metadata.txt
 echo "git commit hash: ${COMMIT}" >> ./dist/deployment_metadata.txt
 
-rsync -av --delete "--exclude=pakrypt.version:prerelease" ./dist/ "${WEB_HOST}:/var/www/app.pakrypt.com/"
+# -p so there is no error if it exists already.
+ssh "${WEB_HOST}" mkdir -p "/var/www/app.pakrypt.com/pakrypt.version:prerelease/"
+rsync -av --delete ./dist/ "${WEB_HOST}:/var/www/app.pakrypt.com/pakrypt.version:prerelease/"
 
 popd
