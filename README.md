@@ -24,11 +24,10 @@ Pre-flight:
 * Is the developer documentation updated?
 * Is the guide updated?
 * Is the web front updated?
-* Is QA good?
 
 Release:
 
-* Determine the next release version number (adhere to semver `v1.0.0`).
+* Determine the next release version number (adhere to semver, e.g. `v1.0.0`).
 * Merge all relevant branches into `main`.
 * Draft commits on `main` adding the following:
   - `LICENSE`
@@ -38,13 +37,17 @@ Release:
     - Updated version number.
   - `package-lock.json` (run `npm install .`)
     - Updated version number.
-  - `README.md`
-    - Updated version number.
   - `doc/Release.md`
     - Release summary.
+* Pre-release the `main` branch, i.e. `./deploy-prerelease-app.sh main`.
+* Perform final QA (prefer to fail forward with hot-fixes, but if there's a show stopper, we can do something ad hoc since PRs are already merged).
+* Draft a commit on `main` adding the following:
+  - `README.md`
+    - Updated version number in the release link (to be created later).
 * Tag the `main` branch with the final release version `v1.0.0`.
 * Manage GitHub release.
   - Do a fresh install and build, .tar.gz it up.
+  - Use release summary verbatim for the release.
   - Put the file in the release.
   - Validate the link to the release works in `README.md`.
 * Run the app deploy script with the version tag, e.g. `./deploy-app.sh v1.0.0`.
