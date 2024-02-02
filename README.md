@@ -55,9 +55,17 @@ Release:
 * Give a couple days of time between completing the development work and the release.
 * Prepare the release summary a couple days before the release.
 
-## Deploy Scripts
+## Pre-release Deploys
 
-To deploy Pakryp to [app.pakrypt.com](https://app.pakrypt.com/), use the `deploy-app.sh` script.
+To deploy Pakrypt to [app.pakrypt.com/pakrypt.version:prerelease](https://app.pakrypt.com/pakrypt.version:prerelease), use the `deploy-app.sh` script.
+
+```bash
+./deploy-prerelease-app.sh git-tag-to-deploy
+```
+
+## Production Deploys
+
+To deploy Pakrypt to [app.pakrypt.com](https://app.pakrypt.com/), use the `deploy-app.sh` script.
 
 ```bash
 ./deploy-app.sh git-tag-to-deploy
