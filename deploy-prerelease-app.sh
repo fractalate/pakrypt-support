@@ -14,11 +14,20 @@ CODE_DIR=checkout-prerelease-app
 
 if [ -d "${CODE_DIR}" ]; then
     pushd "${CODE_DIR}"
+
+    # Clean up any leftover changes from the previous deploy.
+    git reset --hard
     git clean -xdf .
-    git checkout main
-    git pull
+
+    # Find updated refs from the origin and check out the one we want.
+    git fetch --all
     git checkout "${TAG}"
-    git pull || true # TODO: Not great, but okay for now.
+
+    # Tags and commit hashes don't get out of sync with the origin, so
+    # if this is a branch, make sure you're at the origin's commit.
+    if git branch -r | grep -q "^origin/${TAG}$"; then
+        git reset --hard "origin/${TAG}"
+    fi
 else
     git clone https://github.com/fractalate/pakrypt.git "${CODE_DIR}"
     pushd "${CODE_DIR}"
