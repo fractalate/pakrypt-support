@@ -45,12 +45,12 @@ Release:
   - `README.md`
     - Updated version number in the release link (to be created later).
 * Tag the `main` branch with the final release version `v1.0.0`.
+* Run deploy script step 1 with the version tag, e.g. `./deploy-app-step1.sh v1.0.0` (this will create `pakrypt-v1.0.0.tar.gz` which will be included in the GitHub release).
 * Manage GitHub release.
-  - Do a fresh install and build, .tar.gz it up.
   - Use release summary verbatim for the release.
-  - Put the file in the release.
+  - Put the file built from deploy script step 1 into the release.
   - Validate the link to the release works in `README.md`.
-* Run the app deploy script with the version tag, e.g. `./deploy-app.sh v1.0.0`.
+* Run the app deploy script with the version tag, e.g. `./deploy-app-step2.sh v1.0.0`.
 * Verify the version by using the app.
 
 ### Tips
