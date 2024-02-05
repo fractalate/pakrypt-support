@@ -68,10 +68,11 @@ To deploy Pakrypt to [app.pakrypt.com/pakrypt.version:prerelease](https://app.pa
 
 ## Production Deploys
 
-To deploy Pakrypt to [app.pakrypt.com](https://app.pakrypt.com/), use the `deploy-app.sh` script.
+To deploy Pakrypt to [app.pakrypt.com](https://app.pakrypt.com/), use the `deploy-app-step1.sh` and `deploy-app-step2.sh` script.
 
 ```bash
-./deploy-app.sh git-tag-to-deploy
+./deploy-app-step1.sh git-tag-to-deploy # Generates .tar.gz.
+./deploy-app-step2.sh git-tag-to-deploy # Deploys the build.
 ```
 
 To deploy web front for Pakrypt to [www.pakrypt.com](https://www.pakrypt.com/), use the `deploy-www.sh` script.

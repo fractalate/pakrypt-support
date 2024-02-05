@@ -34,14 +34,13 @@ else
     git checkout "${TAG}"
 fi
 
-TIMESTAMP=$( date )
-COMMIT=$( git rev-parse HEAD )
-
 npm ci .
 npm run build
 
-echo "deploy time: ${TIMESTAMP}" > ./dist/deployment_metadata.txt
-echo "git commit hash: ${COMMIT}" >> ./dist/deployment_metadata.txt
+echo "deploy time: $( date )" > ./dist/deployment_metadata.txt
+echo "git commit hash: $( git rev-parse HEAD )" >> ./dist/deployment_metadata.txt
+echo "node version: $( node --version )" >> ./dist/deployment_metadata.txt
+echo "npm version: $( npm --version )" >> ./dist/deployment_metadata.txt
 
 # -p so there is no error if it exists already.
 ssh "${WEB_HOST}" mkdir -p "/var/www/app.pakrypt.com/pakrypt.version:prerelease/"

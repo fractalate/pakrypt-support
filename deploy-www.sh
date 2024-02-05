@@ -34,11 +34,8 @@ else
     git checkout "${TAG}"
 fi
 
-TIMESTAMP=$( date )
-COMMIT=$( git rev-parse HEAD )
-
-echo "deploy time: ${TIMESTAMP}" > deployment_metadata.txt
-echo "git commit hash: ${COMMIT}" >> deployment_metadata.txt
+echo "deploy time: $( date )" > deployment_metadata.txt
+echo "git commit hash: $( git rev-parse HEAD )" >> deployment_metadata.txt
 
 rsync -av --delete --exclude=.git/ ./ "${WEB_HOST}:/var/www/www.pakrypt.com/"
 
