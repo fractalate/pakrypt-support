@@ -25,7 +25,7 @@ if [ -d "${CODE_DIR}" ]; then
 
     # Tags and commit hashes don't get out of sync with the origin, so
     # if this is a branch, make sure you're at the origin's commit.
-    if git branch -r | grep -q "^origin/${TAG}$"; then
+    if git branch -r | grep -q "^\s*origin\/${TAG}\s*$"; then
         git reset --hard "origin/${TAG}"
     fi
 else
