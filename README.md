@@ -1,6 +1,6 @@
 # Pakrypt Support
 
-Tools and information to support deploying and operating an instance of Pakrypt.
+Tools and information to support deploying and operating an instance of [Pakrypt](https://github.com/fractalate/pakrypt).
 
 ## QA Process
 
